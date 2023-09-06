@@ -1,0 +1,31 @@
+on: [push]
+
+jobs:
+  gist-sync:
+    name: gist-sync
+    runs-on: ubuntu-latest
+    steps:
+    #PIC18F4550
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC18F4550
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/df35b0ba39e62d2659b7bbca93b9d4fc
+          gist_title: Práctica-9 Keypad 4550-MikroC.c
+          gist_description: Prácticas MikroC Pro for PIC
+          github_file: Proyecto/4550/Keypad.c
+          file_encoding: WINDOWS-1252
+    #PIC18F45K50
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC18F45K50
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/4499d678f5525111d412c1e2f733265f
+          gist_title: Practica-9 Keypad 45K50-MikroC.c
+          gist_description: Prácticas MikroC Pro for PIC
+          github_file: Proyecto/45K50/Keypad.c
+          file_encoding: WINDOWS-1252
